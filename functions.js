@@ -69,3 +69,21 @@ function draw(){
         won();
     }
 }
+
+function component(x, y){
+    var text = "puzzle";
+    z = x + 3 * y;
+    z = im[z];
+    text = text + z.toString();
+    if (z != 0){
+        var img = document.getElementById('text');
+        var pat = ctx.createPattern(img, "repeat");
+        ctx.fillStyle = pat;
+    }
+
+    else{
+        ctx.fillStyle = "white";
+    }
+
+    ctx.fillRect(150*x, 150*y, 150, 150);
+}
