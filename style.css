@@ -25,6 +25,7 @@ img{
 }
 
 #originalImage{
-    width: 20%;
-    height: 20%;
+    margin-left: 10px;
+    width: 70%;
+    height: 70%;
 }

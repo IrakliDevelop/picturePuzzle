@@ -2,8 +2,8 @@ isOpen = false;
 
 function openNav() {
     isOpen = true;
-    document.getElementById("mySidenav").style.width = "900px";
-    document.getElementById("main").style.marginLeft = "900px";
+    document.getElementById("mySidenav").style.width = "400px";
+    document.getElementById("main").style.marginLeft = "400px";
 }
   
 function closeNav() {

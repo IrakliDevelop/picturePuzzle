@@ -14,23 +14,20 @@
 
 <div id="navigation">
     <nav class="navbar navbar-expand navbar-dark bg-danger">
-        <a class="navbar-brand" onclick="toggleNav()" href="#">Settings</a>
+        <a class="navbar-brand" onclick="toggleNav()" href="#">Original Image</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample02" aria-controls="navbarsExample02" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
 
         <div class="collapse navbar-collapse" id="navbarsExample02">
-            <ul class="navbar-nav mr-auto">
+            <ul class="navbar-nav ml-auto">
             <li class="nav-item active">
-                <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                <a class="nav-link" href="#"><button class="btn btn-primary">Import<span class="sr-only">(current)</span></button></a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="#">Link</a>
             </li>
             </ul>
-            <form class="form-inline my-2 my-md-0">
-            <input class="form-control" type="text" placeholder="Search">
-            </form>
         </div>
     </nav>
 </div>
@@ -40,14 +37,9 @@
 <div id="">
         <div id="mySidenav" class="sidenav bg-dark">
             <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&#9776;</a>
-            <a href="#">About</a>
-            <a href="#">Services</a>
-            <a href="#">Clients</a>
-            <a href="#">Contact</a>
-        </div>
-
-        <div id="calendar">
-            
+            <div id="original">
+                <img id="originalImage" src="images/zhdunHD.jpg" alt="">
+            </div>
         </div>
     </div>
 </div>
@@ -80,10 +72,7 @@
 
     </div>
 
-<div id="original">
-    <h1>Original picture</h1>
-    <img id="originalImage" src="images/zhdunHD.jpg" alt="">
-</div>
+
 
     
     
