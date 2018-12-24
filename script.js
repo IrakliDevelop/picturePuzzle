@@ -66,14 +66,26 @@ document.getElementById("main").addEventListener('click', (event)=>{
 
     let thirdRow = document.getElementById("thirdRow");
 
-    console.log()
-
     if (youWon && thirdRow.childNodes[5].id == "empty"){
         document.getElementById("won").innerHTML = "<h1>You have won</h1>"
     }
-
-
-
-    
-
 })
+
+document.getElementById("chooseImageBtn").addEventListener("click", async function(){
+    var modal = document.getElementById('myModal');
+    modal.style.display = "block";
+
+    var span = document.getElementsByClassName("close")[0];
+
+    span.onclick = function() {
+        modal.style.display = "none";
+    }
+
+    window.onclick = function(event) {
+        if (event.target == modal) {
+            modal.style.display = "none";
+        }
+    }
+
+    let images = await request('https://jsonplaceholder.typicode.com/users');
+});

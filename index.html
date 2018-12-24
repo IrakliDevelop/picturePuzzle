@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
     <title>Puzzle</title>
     <link rel="stylesheet" href="css/sidebar.css">
+    <script src="js/request.js"></script>
 </head>
 <body>
 <script src="js/sidebar.js"></script>
@@ -22,10 +23,7 @@
         <div class="collapse navbar-collapse" id="navbarsExample02">
             <ul class="navbar-nav ml-auto">
             <li class="nav-item active">
-                <a class="nav-link" href="#"><button class="btn btn-primary">Import<span class="sr-only">(current)</span></button></a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">Link</a>
+                <a class="nav-link" href="#"><button id="chooseImageBtn" class="btn btn-primary">Choose Image<span class="sr-only">(current)</span></button></a>
             </li>
             </ul>
         </div>
@@ -70,11 +68,25 @@
 
 <div id="won">
 
-    </div>
+</div>
 
+<!-- modal start -->
+<!-- The Modal -->
+<div id="myModal" class="modal">
 
-
+  <!-- Modal content -->
+  <div class="modal-content">
+    <span class="close">&times;</span>
     
+    <table class="table table-striped table-bordered table-hover">
+
+    </table>
+
+  </div>
+
+</div>
+
+<!-- modal end -->
     
 <script src="script.js"></script>
 </body>
