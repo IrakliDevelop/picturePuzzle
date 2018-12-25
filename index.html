@@ -8,9 +8,10 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
     <title>Puzzle</title>
     <link rel="stylesheet" href="css/sidebar.css">
-    <script src="js/request.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 </head>
 <body>
+<script src="js/timer.js"></script>
 <script src="js/sidebar.js"></script>
 
 <div id="navigation">
@@ -22,8 +23,11 @@
 
         <div class="collapse navbar-collapse" id="navbarsExample02">
             <ul class="navbar-nav ml-auto">
+            <li class="nav-item navbar-brand">
+                <div id="timer" ></div>
+            </li>
             <li class="nav-item active">
-                <a class="nav-link" href="#"><button id="chooseImageBtn" class="btn btn-primary">Choose Image<span class="sr-only">(current)</span></button></a>
+                <a class="nav-link" href="#"><button id="chooseImageBtn" class="btn btn-primary">Select Image from List<span class="sr-only">(current)</span></button></a>
             </li>
             </ul>
         </div>
@@ -36,7 +40,7 @@
         <div id="mySidenav" class="sidenav bg-dark">
             <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&#9776;</a>
             <div id="original">
-                <img id="originalImage" src="images/zhdunHD.jpg" alt="">
+                <img id="originalImage" alt="">
             </div>
         </div>
     </div>
@@ -66,10 +70,6 @@
     </div>
 </div>
 
-<div id="won">
-
-</div>
-
 <!-- modal start -->
 <!-- The Modal -->
 <div id="myModal" class="modal">
@@ -78,8 +78,8 @@
   <div class="modal-content">
     <span class="close">&times;</span>
     
-    <table class="table table-striped table-bordered table-hover">
-
+    <table id="imageNamesTable" class="table table-striped table-bordered table-hover">
+        
     </table>
 
   </div>
