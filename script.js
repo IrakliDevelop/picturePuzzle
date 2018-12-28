@@ -3,6 +3,13 @@ let correctOrderOfImages = [1,2,3,4,5,6,7,8];
 let divOrder = [1,4,7,2,5,8,3,6];
 let isStarted = false;
 
+timerLabel = document.getElementById('timer');
+var timer = new Timer();
+
+setInterval(function(){
+    timerLabel.innerHTML = timer.getDuration();
+}, 1000);
+
 function generatePuzzle(imageName){
     var images = [`images/${imageName}/image_part_001.jpg`, `images/${imageName}/image_part_002.jpg`, `images/${imageName}/image_part_003.jpg`, `images/${imageName}/image_part_004.jpg`, `images/${imageName}/image_part_005.jpg`, `images/${imageName}/image_part_006.jpg`, `images/${imageName}/image_part_007.jpg`, `images/${imageName}/image_part_008.jpg`,];
 
@@ -50,14 +57,20 @@ function generatePuzzle(imageName){
         used.push(idx);
         document.getElementById(i+1).appendChild(img);
     }
+
+    var modal = document.getElementById('myModal');
+    modal.style.display = 'none';
+    timer.reset();
+    isStarted = false;
 }
 
 // initialization 
-generatePuzzle('Some Dude with Big Nose');
+generatePuzzle(imageNames[Math.floor(Math.random()*imageNames.length)]);
 
 document.getElementById("main").addEventListener('click', (event)=>{
     if(!isStarted){
         isStarted = true;
+        timer.start();
     }
 
 
@@ -110,9 +123,11 @@ document.getElementById("main").addEventListener('click', (event)=>{
 
     let header =  document.getElementById("header");
     if (youWon && thirdRow.childNodes[5].id == "empty"){
-        header.innerHTML = "<h1>You have won!</h1>";
+        header.innerHTML = `<h1 class='text-primary'>You have won!<br />TIME: <span class='text-success'>${timer.getDuration()}</spann></h1>`;
         header.style.color = 'green';
         header.innerHTML += "<button id='restart' class='btn btn-danger'>Restart & Use Random Image</button>";
+        timer.stop();
+        isStarted = false;
 
         restartBtn = document.getElementById('restart');
         restartBtn.addEventListener('click', function(){
@@ -152,6 +167,7 @@ document.getElementById("chooseImageBtn").addEventListener("click", function(){
         table.innerHTML += `
             <tr>
                 <td>${imageNames[i]}</td>
+                <td><img src='images/${imageNames[i]}/image.jpg'/></td>
                 <td><button onclick="generatePuzzle('${imageNames[i]}')" class="btn btn-success">Select</button></td>
             </tr>
         `;

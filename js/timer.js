@@ -8,9 +8,21 @@ function Timer(){
     }
 
     this.getDuration = function(){
-        this.stop();
-        console.log(this.duration);
-        this.start();
+        
+        if (running){
+            this.stop();
+            let dur = this.duration;
+            this.start();
+            let mins = dur / 60;
+            let secs = dur % 60;
+            durationString = `${Math.floor(mins)} : ${Math.floor(secs)}`;
+        }
+        else{
+            let mins = this.duration / 60;
+            let secs = this.duration % 60;
+            durationString = `${Math.floor(mins)} : ${Math.floor(secs)}`;
+        }
+        return durationString;
     }
 
     this.stop = function(){
