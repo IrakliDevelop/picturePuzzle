@@ -1,4 +1,4 @@
-let imageNames = ['Mona Lisa', 'Some Dude with Big Nose', 'Apollo 11', 'King David'];
+let imageNames = ['Mona Lisa', 'Homunculus Loxodontus', 'Apollo 11', 'King David'];
 let correctOrderOfImages = [1,2,3,4,5,6,7,8];
 let divOrder = [1,4,7,2,5,8,3,6];
 let isStarted = false;
@@ -116,7 +116,7 @@ document.getElementById("main").addEventListener('click', (event)=>{
     }
 
     if(youWon){
-        console.log("YOU WON");
+        // console.log("YOU WON");
     }
 
     let thirdRow = document.getElementById("thirdRow");
@@ -177,6 +177,7 @@ document.getElementById("chooseImageBtn").addEventListener("click", function(){
 // Remove zzz stuff
 let anchor = document.querySelectorAll("a[href='https://www.zzz.com.ua/']");
 let footDiv = document.getElementsByClassName('cbalink')[0];
+// console.log(footDiv);
 let parent = anchor[0].parentNode;
 parent.style.display = "none";
 footDiv.style.display = "none";
